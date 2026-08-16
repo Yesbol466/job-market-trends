@@ -1,0 +1,12 @@
+version: 2
+
+sources:
+  - name: public
+    database: job_trends
+    schema: public
+    tables:
+      - name: jobs
+      - name: companies
+      - name: locations
+      - name: skills
+      - name: job_skills

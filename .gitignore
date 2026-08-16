@@ -1,0 +1,24 @@
+# Environment
+.env
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Data (too large for GitHub)
+ingestion/job_description.csv
+
+# dbt
+dbt/job_trends/target/
+dbt/job_trends/logs/
+dbt/job_trends/.user.yml
+
+# Node
+frontend/node_modules/
+
+ingestion/job_description.csv
+ingestion/job_descriptions.csv
+
+# Claude
+.claude/
