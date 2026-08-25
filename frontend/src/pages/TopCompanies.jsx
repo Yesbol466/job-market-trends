@@ -5,7 +5,7 @@ export default function TopCompanies() {
     const [data, setData] = useState([])
 
     useEffect(() => {
-        axios.get('http://127.0.0.1:8000/api/companies/top?limit=15')
+        axios.get(`${import.meta.env.VITE_API_URL}/api/companies/top?limit=15`)
             .then(r => setData(r.data))
     }, [])
 

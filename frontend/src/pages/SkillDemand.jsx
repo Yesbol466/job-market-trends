@@ -9,7 +9,7 @@ export default function SkillDemand() {
     const [data, setData] = useState([])
 
     useEffect(() => {
-        axios.get('http://127.0.0.1:8000/api/skills/demand?limit=20')
+        axios.get(`${import.meta.env.VITE_API_URL}/api/skills/demand`)
             .then(r => setData(r.data))
     }, [])
 
