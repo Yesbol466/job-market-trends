@@ -36,7 +36,7 @@ def skill_demand(limit: int = 20):
     conn = get_conn()
     cur = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
     cur.execute("""
-        SELECT skill_name, skill_category, job_count, demand_rank
+        SELECT skill_name, job_count, demand_rank
         FROM analytics.most_demanded_skills
         ORDER BY demand_rank
         LIMIT %s
