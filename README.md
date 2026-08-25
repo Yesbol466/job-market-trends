@@ -131,7 +131,9 @@ job-trends/
     │   └── App.jsx             # Tab navigation
     └── vite.config.js
 ```
-
+## Live Demo
+- **Dashboard:** https://job-market-trends.vercel.app
+- **API:** https://job-trends-api.onrender.com/docs
 ---
 
 ## How to Run Locally
