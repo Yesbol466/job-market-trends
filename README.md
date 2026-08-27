@@ -60,6 +60,8 @@ React + Recharts Dashboard
 | Frontend | React + Vite |
 | Charts | Recharts |
 | Styling | Tailwind CSS |
+| CI/CD | GitHub Actions |
+| Deployment | Vercel + Render |
 | Version Control | Git + GitHub |
 
 ---
@@ -103,10 +105,21 @@ job_skills        — junction table (2.7M relationships)
 
 ---
 
+## CI/CD Pipeline
+
+Every push to `main` automatically:
+1. Triggers a Render redeploy of the FastAPI backend
+2. Rebuilds and deploys the React frontend to Vercel
+
+---
+
 ## Project Structure
 
 ```
 job-trends/
+├── .github/
+│   └── workflows/
+│       └── deploy.yml          # CI/CD pipeline
 ├── docker-compose.yml          # PostgreSQL + pgAdmin containers
 ├── .env                        # DB credentials (not committed)
 ├── .gitignore
@@ -236,9 +249,9 @@ Open `http://localhost:5173`
 
 - [x] Deploy backend on Render
 - [x] Deploy frontend on Vercel
+- [x] GitHub Actions CI/CD pipeline
 - [ ] Add Kubernetes manifests for container orchestration
 - [ ] Add Airflow DAGs for scheduled pipeline runs
-- [ ] Add GitHub Actions CI/CD pipeline
 - [ ] Replace synthetic dataset with live scraped data
 
 ---
