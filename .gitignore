@@ -22,3 +22,5 @@ ingestion/job_descriptions.csv
 
 # Claude
 .claude/
+.vercel
+.env*
