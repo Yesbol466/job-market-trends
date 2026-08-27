@@ -6,9 +6,12 @@ Built as a portfolio project to demonstrate a full data engineering stack — fr
 
 ---
 
-## Live Dashboard
+## Live Demo
 
-> Coming soon — deployment in progress
+- **Dashboard:** https://job-market-trends.vercel.app
+- **API:** https://job-trends-api.onrender.com/docs
+
+![Dashboard Demo](demo.gif)
 
 ---
 
@@ -108,6 +111,7 @@ job-trends/
 ├── .env                        # DB credentials (not committed)
 ├── .gitignore
 ├── README.md
+├── demo.gif                    # Dashboard demo
 │
 ├── db/
 │   └── init.sql                # Schema — all CREATE TABLE statements
@@ -131,9 +135,7 @@ job-trends/
     │   └── App.jsx             # Tab navigation
     └── vite.config.js
 ```
-## Live Demo
-- **Dashboard:** https://job-market-trends.vercel.app
-- **API:** https://job-trends-api.onrender.com/docs
+
 ---
 
 ## How to Run Locally
@@ -165,7 +167,7 @@ docker-compose up -d
 ```
 
 ### 4. Download the dataset
-Download the dataset from Kaggle and place it at:
+Download the Kaggle dataset and place it at:
 ```
 ingestion/job_description.csv
 ```
@@ -226,12 +228,14 @@ Open `http://localhost:5173`
 
 **dbt separation** — Staging and mart layers are kept separate. Staging cleans and renames, marts aggregate and analyze.
 
+**Dataset size** — The live demo runs on a 10,000 row sample due to free tier database limits. The full pipeline handles 1.6M rows locally.
+
 ---
 
 ## Roadmap
 
-- [ ] Deploy backend on Render
-- [ ] Deploy frontend on Vercel
+- [x] Deploy backend on Render
+- [x] Deploy frontend on Vercel
 - [ ] Add Kubernetes manifests for container orchestration
 - [ ] Add Airflow DAGs for scheduled pipeline runs
 - [ ] Add GitHub Actions CI/CD pipeline
