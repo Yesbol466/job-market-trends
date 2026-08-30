@@ -64,6 +64,7 @@ React + Recharts Dashboard
 | Deployment | Vercel + Render |
 | Version Control | Git + GitHub |
 | Orchestration | Kubernetes + minikube |
+| Pipeline Scheduling | Apache Airflow |
 ---
 
 ## Database Schema
@@ -110,6 +111,15 @@ job_skills        — junction table (2.7M relationships)
 Every push to `main` automatically:
 1. Triggers a Render redeploy of the FastAPI backend
 2. Rebuilds and deploys the React frontend to Vercel
+
+---
+## Pipeline Orchestration
+
+Apache Airflow runs inside the Kubernetes cluster and schedules the data pipeline automatically every Monday:
+
+1. **Ingest** — pulls fresh job data into PostgreSQL
+2. **Transform** — runs dbt models to update analytics tables
+3. **Quality Check** — validates row counts and data integrity
 
 ---
 
@@ -250,9 +260,9 @@ Open `http://localhost:5173`
 - [x] Deploy backend on Render
 - [x] Deploy frontend on Vercel
 - [x] GitHub Actions CI/CD pipeline
-- [x] Kubernetes manifests for local orchestration
-- [ ] Add Airflow DAGs for scheduled pipeline runs
-- [ ] Replace synthetic dataset with live scraped data
+- [x] Kubernetes manifests for container orchestration
+- [x] Airflow DAGs for scheduled pipeline runs inside Kubernetes
+
 
 ---
 
