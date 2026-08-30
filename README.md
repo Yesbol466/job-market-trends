@@ -63,7 +63,7 @@ React + Recharts Dashboard
 | CI/CD | GitHub Actions |
 | Deployment | Vercel + Render |
 | Version Control | Git + GitHub |
-
+| Orchestration | Kubernetes + minikube |
 ---
 
 ## Database Schema
@@ -250,7 +250,7 @@ Open `http://localhost:5173`
 - [x] Deploy backend on Render
 - [x] Deploy frontend on Vercel
 - [x] GitHub Actions CI/CD pipeline
-- [ ] Add Kubernetes manifests for container orchestration
+- [x] Kubernetes manifests for local orchestration
 - [ ] Add Airflow DAGs for scheduled pipeline runs
 - [ ] Replace synthetic dataset with live scraped data
 
