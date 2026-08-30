@@ -121,6 +121,7 @@ Apache Airflow runs inside the Kubernetes cluster and schedules the data pipelin
 2. **Transform** — runs dbt models to update analytics tables
 3. **Quality Check** — validates row counts and data integrity
 
+![Airflow DAG](dag_airflow.png)
 ---
 
 ## Project Structure
